@@ -37,5 +37,11 @@ class AlarmReceiver : BroadcastReceiver() {
             .build()
 
         notificationManager.notify(taskId, notification)
+
+        // Bir sonraki tekrar için alarmı yeniden kur
+        val task = TaskStorage.getTasks(context).find { it.id == taskId }
+        if (task != null) {
+            AlarmScheduler.scheduleAlarm(context, task)
+        }
     }
 }
