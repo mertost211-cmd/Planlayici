@@ -1,38 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/taskTitleInput"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/task_title_hint"
-        android:textSize="18sp" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <Button
-        android:id="@+id/pickTimeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/select_time" />
+        <EditText
+            android:id="@+id/taskTitleInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/task_title_hint"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/selectedTimeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/pickTimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/select_time" />
 
-    <Button
-        android:id="@+id/saveTaskButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/save" />
+        <TextView
+            android:id="@+id/selectedTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Tekrar"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/repeatTypeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/radioDaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Her gün"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioWeekly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Haftalık" />
+
+            <RadioButton
+                android:id="@+id/radioMonthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Aylık" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/weekDaysLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hangi günler?" />
+
+            <CheckBox android:id="@+id/checkMon" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Pazartesi" />
+            <CheckBox android:id="@+id/checkTue" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Salı" />
+            <CheckBox android:id="@+id/checkWed" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Çarşamba" />
+            <CheckBox android:id="@+id/checkThu" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Perşembe" />
+            <CheckBox android:id="@+id/checkFri" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cuma" />
+            <CheckBox android:id="@+id/checkSat" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cumartesi" />
+            <CheckBox android:id="@+id/checkSun" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Pazar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/monthDayLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ayın günü: " />
+
+            <TextView
+                android:id="@+id/selectedMonthDayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textStyle="bold"
+                android:layout_marginEnd="16dp" />
+
+            <Button
+                android:id="@+id/pickMonthDayButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seç" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/saveTaskButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/save" />
+
+    </LinearLayout>
+
+</ScrollView>
