@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sport Planner</string>
+    <string name="add_task">Görev Ekle</string>
+    <string name="task_title_hint">Ne yapacaksın?</string>
+    <string name="select_time">Saat Seç</string>
+    <string name="save">Kaydet</string>
+    <string name="no_tasks">Henüz görev eklenmedi</string>
+</resources>
