@@ -38,7 +38,7 @@ object TaskStorage {
             array.put(obj)
         }
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        prefs.edit().putString(KEY_TASKS, array.toString()).apply()
+        prefs.edit().putString(KEY_TASKS, array.toString()).commit()
     }
 
     fun addTask(context: Context, title: String, hour: Int, minute: Int): Task {
